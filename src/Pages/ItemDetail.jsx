@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useParams, Link } from 'react-router-dom';
 import { UsersData } from "../Utils/UsersData";
 
-const SingleUser = () => {
+const ItemDetail = () => {
     const {id} = useParams();
 
     let clickedUser = {};
@@ -16,7 +16,7 @@ const SingleUser = () => {
 
     return (
         <div>
-            <p>Information of User {id}</p>
+            <h1>Item {id}</h1>
             <div key={clickedUser.id} className="user-div">
                 <p>Id:{clickedUser.id}</p>
                 <h3>Name: {clickedUser.name}</h3>
@@ -28,7 +28,7 @@ const SingleUser = () => {
                 <p>Website: {clickedUser.website}</p>
                 <p>Company name: {clickedUser.company.name}</p>
                 <p>Company description: {clickedUser.company.catchPhrase}</p>
-                <Link to='/users'>Go back</Link>
+                <Link to='/'>Go back</Link>
                 <br/>
                 <br/>
             </div>
@@ -36,4 +36,4 @@ const SingleUser = () => {
     )
 }
 
-export default SingleUser;
+export default ItemDetail;
