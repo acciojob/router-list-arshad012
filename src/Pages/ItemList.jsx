@@ -2,26 +2,19 @@ import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import { UsersData } from '../Utils/UsersData';
 
-
 const ItemList = () => {
-    const [users, setUsers] = useState(UsersData);
-
+    const [items, setItems] = useState(new Array(3).fill('Item'));
+    
     return (
         <div>
             <h1>Item List</h1>
-            <hr />
-            <div>
+            <ul>
                 {
-                    users.map((user) => (
-                        <div key={user.id} className="user-div">
-                            <p>Id:{user.id}</p>
-                            <Link to={'/item/' + user.id}><h3>Name: {user.name}</h3></Link>
-                            <p>Email: {user.email}</p>
-                            <p>City: {user.address.city}</p>
-                        </div>
+                    items.map((item, index) => (
+                        <li key={index}><Link to={'/item/'+(index+1)}>{item} {index+1}</Link></li>
                     ))
                 }
-            </div>
+            </ul>
         </div>
     )
 }
