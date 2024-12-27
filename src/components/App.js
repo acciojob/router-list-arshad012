@@ -1,12 +1,18 @@
 
 import React from "react";
+import { BrowserRouter } from 'react-router-dom';
+import AllRoutes from "../AllRoutes/Routes";
+import Navigation from "../Navigation/Navigation";
 import './../styles/App.css';
 
 const App = () => {
   return (
-    <div>
-        {/* Do not remove the main div */}
-    </div>
+    <>
+      <BrowserRouter>
+        <Navigation />
+        <AllRoutes />
+      </BrowserRouter>
+    </>
   )
 }
 
